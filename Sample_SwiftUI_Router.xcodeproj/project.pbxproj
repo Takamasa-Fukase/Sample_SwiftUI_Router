@@ -14,6 +14,7 @@
 		BCFB7B1C2CFAF36B0018649D /* Sample_SwiftUI_RouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCFB7B1B2CFAF36B0018649D /* Sample_SwiftUI_RouterTests.swift */; };
 		BCFB7B262CFAF36C0018649D /* Sample_SwiftUI_RouterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCFB7B252CFAF36C0018649D /* Sample_SwiftUI_RouterUITests.swift */; };
 		BCFB7B282CFAF36C0018649D /* Sample_SwiftUI_RouterUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCFB7B272CFAF36C0018649D /* Sample_SwiftUI_RouterUITestsLaunchTests.swift */; };
+		BCFB7B362CFAF40A0018649D /* PostListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCFB7B352CFAF40A0018649D /* PostListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		BCFB7B212CFAF36C0018649D /* Sample_SwiftUI_RouterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Sample_SwiftUI_RouterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCFB7B252CFAF36C0018649D /* Sample_SwiftUI_RouterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sample_SwiftUI_RouterUITests.swift; sourceTree = "<group>"; };
 		BCFB7B272CFAF36C0018649D /* Sample_SwiftUI_RouterUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sample_SwiftUI_RouterUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		BCFB7B352CFAF40A0018649D /* PostListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,8 @@
 			children = (
 				BCFB7B0A2CFAF3680018649D /* Sample_SwiftUI_RouterApp.swift */,
 				BCFB7B0C2CFAF3680018649D /* ContentView.swift */,
+				BCFB7B372CFAF4BE0018649D /* PostCreate */,
+				BCFB7B342CFAF3B30018649D /* PostList */,
 				BCFB7B0E2CFAF36B0018649D /* Assets.xcassets */,
 				BCFB7B102CFAF36B0018649D /* Preview Content */,
 			);
@@ -125,6 +129,29 @@
 				BCFB7B272CFAF36C0018649D /* Sample_SwiftUI_RouterUITestsLaunchTests.swift */,
 			);
 			path = Sample_SwiftUI_RouterUITests;
+			sourceTree = "<group>";
+		};
+		BCFB7B342CFAF3B30018649D /* PostList */ = {
+			isa = PBXGroup;
+			children = (
+				BCFB7B352CFAF40A0018649D /* PostListView.swift */,
+			);
+			path = PostList;
+			sourceTree = "<group>";
+		};
+		BCFB7B372CFAF4BE0018649D /* PostCreate */ = {
+			isa = PBXGroup;
+			children = (
+				BCFB7B382CFAF4F70018649D /* PostCreateConfirmation */,
+			);
+			path = PostCreate;
+			sourceTree = "<group>";
+		};
+		BCFB7B382CFAF4F70018649D /* PostCreateConfirmation */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = PostCreateConfirmation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,6 +285,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BCFB7B0D2CFAF3680018649D /* ContentView.swift in Sources */,
+				BCFB7B362CFAF40A0018649D /* PostListView.swift in Sources */,
 				BCFB7B0B2CFAF3680018649D /* Sample_SwiftUI_RouterApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
