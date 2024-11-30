@@ -14,6 +14,8 @@ struct PostListView: View {
         "Post3"
     ]
     
+    @State var isPresentedPostCreateView = false
+    
     var body: some View {
         NavigationStack {
             VStack(spacing: 32) {
@@ -44,6 +46,15 @@ struct PostListView: View {
             }
             .navigationTitle("PostList")
         }
+        .sheet(
+            isPresented: $isPresentedPostCreateView,
+            onDismiss: {
+                
+            },
+            content: {
+                
+            }
+        )
     }
 }
 
