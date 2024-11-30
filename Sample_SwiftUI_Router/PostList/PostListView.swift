@@ -32,6 +32,8 @@ struct PostListView: View {
                     VStack {
                         Spacer()
                         Button(action: {
+                            // MARK: 投稿作成画面をモーダル表示
+                            isPresentedPostCreateView = true
                             
                         }, label: {
                             Text("+ Create Post")
@@ -52,7 +54,7 @@ struct PostListView: View {
                 
             },
             content: {
-                
+                PostCreateView()
             }
         )
     }
