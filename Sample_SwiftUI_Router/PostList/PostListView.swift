@@ -14,6 +14,7 @@ struct PostListView: View {
         "Post3"
     ]
     
+    @StateObject var viewModel = PostListViewModel()
     @ObservedObject var postCreateNavigationState = PostCreateNavigationState()
     
     var body: some View {
@@ -32,8 +33,7 @@ struct PostListView: View {
                     VStack {
                         Spacer()
                         Button(action: {
-                            // MARK: 投稿作成画面をモーダル表示
-                            postCreateNavigationState.present()
+                            viewModel.createPostButtonTapped()
                             
                         }, label: {
                             Text("+ Create Post")
@@ -58,6 +58,15 @@ struct PostListView: View {
                     .environmentObject(postCreateNavigationState)
             }
         )
+        .onReceive(viewModel.transition) { transition in
+            switch transition {
+            case .postList:
+                break
+            case .postCreate:
+                // MARK: 投稿作成画面をモーダル表示
+                postCreateNavigationState.present()
+            }
+        }
     }
 }
 
