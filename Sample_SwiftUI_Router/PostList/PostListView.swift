@@ -7,12 +7,13 @@
 
 import SwiftUI
 
+struct Post: Identifiable {
+    let id: Int
+    let title: String
+    let description: String
+}
+
 struct PostListView: View {
-    let postList: [String] = [
-        "Post1",
-        "Post2",
-        "Post3"
-    ]
     
     @StateObject var viewModel = PostListViewModel()
     @ObservedObject var postCreateNavigationState = PostCreateNavigationState()
@@ -22,8 +23,8 @@ struct PostListView: View {
             VStack(spacing: 32) {
                 ZStack(alignment: .center, content: {
                     ScrollView {
-                        ForEach(postList, id: \.self) { post in
-                            Text(post)
+                        ForEach(viewModel.postList) { post in
+                            Text(post.title)
                                 .frame(maxWidth: .infinity)
                                 .frame(height: 60)
                                 .background(Color(.secondarySystemBackground))
@@ -58,6 +59,9 @@ struct PostListView: View {
                     .environmentObject(postCreateNavigationState)
             }
         )
+        .onAppear {
+            viewModel.viewAppeared()
+        }
         .onReceive(viewModel.transition) { transition in
             switch transition {
             case .postList:

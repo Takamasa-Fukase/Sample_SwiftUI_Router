@@ -14,7 +14,14 @@ final class PostListViewModel: ObservableObject {
         case postCreate
     }
     
+    @Published var postList: [Post] = []
     let transition = PassthroughSubject<Transition, Never>()
+    
+    func viewAppeared() {
+        postList = Array(0..<5).map({ index in
+               return .init(id: index, title: "投稿\(index)", description: "投稿してみました〜")
+        })
+    }
     
     func createPostButtonTapped() {
         transition.send(.postCreate)
