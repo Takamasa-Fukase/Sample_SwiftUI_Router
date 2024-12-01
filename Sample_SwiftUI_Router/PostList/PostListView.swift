@@ -14,7 +14,7 @@ struct PostListView: View {
         "Post3"
     ]
     
-    @State var isPresentedPostCreateView = false
+    @ObservedObject var postCreateNavigationState = PostCreateNavigationState()
     
     var body: some View {
         NavigationStack {
@@ -33,7 +33,7 @@ struct PostListView: View {
                         Spacer()
                         Button(action: {
                             // MARK: 投稿作成画面をモーダル表示
-                            isPresentedPostCreateView = true
+                            postCreateNavigationState.present()
                             
                         }, label: {
                             Text("+ Create Post")
@@ -49,12 +49,13 @@ struct PostListView: View {
             .navigationTitle("PostList")
         }
         .sheet(
-            isPresented: $isPresentedPostCreateView,
+            isPresented: $postCreateNavigationState.isPresented,
             onDismiss: {
                 
             },
             content: {
                 PostCreateView()
+                    .environmentObject(postCreateNavigationState)
             }
         )
     }
