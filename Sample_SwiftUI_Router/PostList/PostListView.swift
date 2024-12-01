@@ -38,11 +38,11 @@ struct PostListView: View {
                         }, label: {
                             Text("+ Create Post")
                                 .font(.system(size: 20))
-                                .foregroundStyle(Color(.systemBackground))
+                                .foregroundStyle(Color(.label))
+                                .frame(maxWidth: .infinity)
+                                .frame(height: 60)
+                                .background(.tint)
                         })
-                        .frame(maxWidth: .infinity)
-                        .frame(height: 60)
-                        .background(Color(.label))
                     }
                 })
             }

@@ -9,7 +9,6 @@ import SwiftUI
 
 struct PostCreateView: View {
     @State var postNameText = ""
-    private let rect = RoundedRectangle.rect(cornerRadius: 6)
     
     var body: some View {
         NavigationStack {
@@ -17,22 +16,29 @@ struct PostCreateView: View {
                 TextField("Post Name", text: $postNameText)
                     .textFieldStyle(.plain)
                     .frame(height: 40)
-                    .padding(6)
-                    .background(.background, in: rect)
-                    .overlay(rect.stroke(.secondary, lineWidth: 0.5))
-                    .padding(EdgeInsets(top: 32, leading: 16, bottom: 16, trailing: 16))
+                    .padding(EdgeInsets(top: 6, leading: 12, bottom: 6, trailing: 12))
+                    .overlay {
+                        RoundedRectangle(cornerRadius: 8)
+                            .stroke(.secondary, lineWidth: 0.5)
+                    }
                 
                 Spacer()
                 
                 NavigationLink {
-                    PostCreateConfirmationView()
+                    PostCreateConfirmationView(postNameText: postNameText)
                     
                 } label: {
                     Text("to Confirmation")
+                        .frame(maxWidth: .infinity)
+                        .frame(height: 60)
+                        .background(.tint)
+                        .foregroundStyle(Color(.label))
+                        .clipShape(RoundedRectangle(cornerRadius: 8))
                 }
                 
                 Spacer().frame(height: 60)
             }
+            .padding(EdgeInsets(top: 32, leading: 16, bottom: 16, trailing: 16))
             .navigationTitle("Post Create")
         }
     }

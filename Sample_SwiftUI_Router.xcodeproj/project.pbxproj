@@ -104,6 +104,7 @@
 				BCFB7B0C2CFAF3680018649D /* ContentView.swift */,
 				BCFB7B342CFAF3B30018649D /* PostList */,
 				BCFB7B372CFAF4BE0018649D /* PostCreate */,
+				BCFB7B382CFAF4F70018649D /* PostCreateConfirmation */,
 				BCFB7B0E2CFAF36B0018649D /* Assets.xcassets */,
 				BCFB7B102CFAF36B0018649D /* Preview Content */,
 			);
@@ -147,7 +148,6 @@
 			isa = PBXGroup;
 			children = (
 				BCFB7B392CFAF8A20018649D /* PostCreateView.swift */,
-				BCFB7B382CFAF4F70018649D /* PostCreateConfirmation */,
 			);
 			path = PostCreate;
 			sourceTree = "<group>";

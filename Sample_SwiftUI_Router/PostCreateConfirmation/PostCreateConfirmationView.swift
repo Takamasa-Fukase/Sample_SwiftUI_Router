@@ -8,17 +8,17 @@
 import SwiftUI
 
 struct PostCreateConfirmationView: View {
-    var postNameText = "dammy"
+    var postNameText = ""
     
     var body: some View {
         VStack(alignment: .leading) {
             Text("Post Name")
-                .font(.system(size: 20))
+                .font(.system(size: 16))
             
             Text(postNameText)
-                .font(.system(size: 16))
+                .font(.system(size: 20))
                 .frame(maxWidth: .infinity, alignment: .leading)
-                .frame(height: 60)
+                .frame(height: 40)
             
             Spacer()
             
@@ -26,8 +26,12 @@ struct PostCreateConfirmationView: View {
                 
             }, label: {
                 Text("Create")
+                    .frame(maxWidth: .infinity)
+                    .frame(height: 60)
+                    .background(.tint)
+                    .foregroundStyle(Color(.label))
+                    .clipShape(RoundedRectangle(cornerRadius: 8))
             })
-            .frame(maxWidth: .infinity)
             
             Spacer().frame(height: 60)
         }
@@ -37,5 +41,5 @@ struct PostCreateConfirmationView: View {
 }
 
 #Preview {
-    PostCreateConfirmationView()
+    PostCreateConfirmationView(postNameText: "Post1")
 }
