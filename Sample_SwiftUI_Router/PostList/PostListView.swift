@@ -7,12 +7,6 @@
 
 import SwiftUI
 
-struct Post: Identifiable {
-    let id: Int
-    let title: String
-    let description: String
-}
-
 struct PostListView<ViewModel: PostListViewModelInterface>: View {
     @StateObject private var viewModel: ViewModel
     @ObservedObject private var postCreateNavigationState = PostCreateNavigationState()

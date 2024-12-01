@@ -18,6 +18,7 @@
 		BCFB7B3A2CFAF8A20018649D /* PostCreateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCFB7B392CFAF8A20018649D /* PostCreateView.swift */; };
 		BCFB7B3C2CFAFC190018649D /* PostCreateConfirmationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCFB7B3B2CFAFC190018649D /* PostCreateConfirmationView.swift */; };
 		BCFB7B3E2CFC1DED0018649D /* PostListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCFB7B3D2CFC1DED0018649D /* PostListViewModel.swift */; };
+		BCFB7B412CFC32300018649D /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCFB7B402CFC32300018649D /* Post.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		BCFB7B392CFAF8A20018649D /* PostCreateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCreateView.swift; sourceTree = "<group>"; };
 		BCFB7B3B2CFAFC190018649D /* PostCreateConfirmationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCreateConfirmationView.swift; sourceTree = "<group>"; };
 		BCFB7B3D2CFC1DED0018649D /* PostListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListViewModel.swift; sourceTree = "<group>"; };
+		BCFB7B402CFC32300018649D /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 			children = (
 				BCFB7B0A2CFAF3680018649D /* Sample_SwiftUI_RouterApp.swift */,
 				BCFB7B0C2CFAF3680018649D /* ContentView.swift */,
+				BCFB7B3F2CFC32280018649D /* Entities */,
 				BCFB7B342CFAF3B30018649D /* PostList */,
 				BCFB7B372CFAF4BE0018649D /* PostCreate */,
 				BCFB7B382CFAF4F70018649D /* PostCreateConfirmation */,
@@ -161,6 +164,14 @@
 				BCFB7B3B2CFAFC190018649D /* PostCreateConfirmationView.swift */,
 			);
 			path = PostCreateConfirmation;
+			sourceTree = "<group>";
+		};
+		BCFB7B3F2CFC32280018649D /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				BCFB7B402CFC32300018649D /* Post.swift */,
+			);
+			path = Entities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -298,6 +309,7 @@
 				BCFB7B3E2CFC1DED0018649D /* PostListViewModel.swift in Sources */,
 				BCFB7B0D2CFAF3680018649D /* ContentView.swift in Sources */,
 				BCFB7B362CFAF40A0018649D /* PostListView.swift in Sources */,
+				BCFB7B412CFC32300018649D /* Post.swift in Sources */,
 				BCFB7B0B2CFAF3680018649D /* Sample_SwiftUI_RouterApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
