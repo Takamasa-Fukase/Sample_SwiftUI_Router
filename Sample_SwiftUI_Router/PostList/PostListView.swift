@@ -13,10 +13,15 @@ struct Post: Identifiable {
     let description: String
 }
 
-struct PostListView: View {
+struct PostListView<ViewModel: PostListViewModelInterface>: View {
+    @StateObject private var viewModel: ViewModel
+    @ObservedObject private var postCreateNavigationState = PostCreateNavigationState()
     
-    @StateObject var viewModel = PostListViewModel()
-    @ObservedObject var postCreateNavigationState = PostCreateNavigationState()
+    init(
+        viewModel: ViewModel
+    ) {
+        self._viewModel = StateObject(wrappedValue: viewModel)
+    }
     
     var body: some View {
         NavigationStack {
@@ -75,5 +80,5 @@ struct PostListView: View {
 }
 
 #Preview {
-    PostListView()
+    PostListView(viewModel: PostListViewModel())
 }
