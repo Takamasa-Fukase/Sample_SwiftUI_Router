@@ -7,9 +7,13 @@
 
 import SwiftUI
 
+final class PostListModalPresentationState: ObservableObject {
+    @Published var isPresentedPostCreateView = false
+}
+
 struct PostListView<ViewModel: PostListViewModelInterface>: View {
     @StateObject private var viewModel: ViewModel
-    @ObservedObject private var postCreateNavigationState = PostCreateNavigationState()
+    @ObservedObject private var modalPresentationState = PostListModalPresentationState()
     
     init(
         viewModel: ViewModel
@@ -49,13 +53,13 @@ struct PostListView<ViewModel: PostListViewModelInterface>: View {
             .navigationTitle("PostList")
         }
         .sheet(
-            isPresented: $postCreateNavigationState.isPresented,
+            isPresented: $modalPresentationState.isPresentedPostCreateView,
             onDismiss: {
                 
             },
             content: {
                 PostCreateView()
-                    .environmentObject(postCreateNavigationState)
+                    .environmentObject(modalPresentationState)
             }
         )
         .onAppear {
@@ -67,7 +71,7 @@ struct PostListView<ViewModel: PostListViewModelInterface>: View {
                 break
             case .postCreate:
                 // MARK: 投稿作成画面をモーダル表示
-                postCreateNavigationState.present()
+                modalPresentationState.isPresentedPostCreateView = true
             }
         }
     }

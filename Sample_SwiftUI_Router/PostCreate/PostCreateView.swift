@@ -7,18 +7,6 @@
 
 import SwiftUI
 
-final class PostCreateNavigationState: ObservableObject {
-    @Published var isPresented = false
-    
-    func present() {
-        isPresented = true
-    }
-    
-    func dismiss() {
-        isPresented = false
-    }
-}
-
 struct PostCreateView: View {
     @State var postNameText = ""
     

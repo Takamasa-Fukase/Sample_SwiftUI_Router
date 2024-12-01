@@ -9,7 +9,7 @@ import SwiftUI
 
 struct PostCreateConfirmationView: View {
     var postNameText = ""
-    @EnvironmentObject var navigationState: PostCreateNavigationState
+    @EnvironmentObject var modalPresentationState: PostListModalPresentationState
 
     var body: some View {
         VStack(alignment: .leading) {
@@ -24,7 +24,7 @@ struct PostCreateConfirmationView: View {
             Spacer()
             
             Button(action: {
-                navigationState.dismiss()
+                modalPresentationState.isPresentedPostCreateView = false
                 
             }, label: {
                 Text("Create")
