@@ -13,7 +13,7 @@ final class PostListModalPresentationState: ObservableObject {
 
 struct PostListView<ViewModel: PostListViewModelInterface>: View {
     @StateObject private var viewModel: ViewModel
-    @ObservedObject private var modalPresentationState = PostListModalPresentationState()
+    @EnvironmentObject private var modalPresentationState: PostListModalPresentationState
     
     init(
         viewModel: ViewModel
@@ -59,7 +59,6 @@ struct PostListView<ViewModel: PostListViewModelInterface>: View {
             },
             content: {
                 PostCreateView()
-                    .environmentObject(modalPresentationState)
             }
         )
         .onAppear {
